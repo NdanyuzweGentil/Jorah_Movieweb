@@ -1,0 +1,53 @@
+<%=form_for(@movie, html: {multipart:true}) do |form|%>  
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<style>
+.field {
+  margin-left:30%;
+   padding-top:30px;
+}
+.field p{
+   padding:-20px; 
+}
+.field label{
+   color:green;
+}
+</style>
+  <div class="field">
+    <label><%= form.label :title %></label>
+    <p><%= form.text_field :title %><p>
+  </div>
+
+  <div class="field">
+    <label><%= form.label :category %></label>
+    <p><%= form.text_field :category %></p>
+  </div>
+
+  <div class="field">
+    <label><%= form.label :year %></label>
+    <p><%= form.number_field :year %></p>
+  </div>
+
+  <div class="field">
+    <label><%= form.label :price %></label>
+    <p><%= form.text_field :price %></p>
+  </div>
+
+  <div class="field">
+    <label><%= form.label :attachment %></label>
+    <p><%= form.file_field :attachment %></p>
+  </div>
+
+  <div class="field">
+    <%= form.submit "Save", class: "btn btn-secondary" %>
+  </div>
+<% end %>
