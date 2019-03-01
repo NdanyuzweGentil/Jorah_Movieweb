@@ -48,6 +48,10 @@ footer p{
             <div class="card-body">
               <p class="card-text"><b>Title:</b><%= movie.title %><br><b>category:</b><%= movie.category %><br><b>Year:</b><%= movie.year %><br><b>Price:</b><%= movie.price %></p>
              <b><u><%= link_to "Download", movie.attachment_url %></u></b>
+                          <b><u><%= link_to "Edit", edit_movie_path(movie) %></u></b>
+                          <b><u><%= link_to "Show", movie %></u></b>
+
+
                <b><u><%= link_to "Delete",  movie, method: :delete, confirm: "Are you sure you want to delete #{movie.attachment}?" %></u></b>
               </div>
             </div>
